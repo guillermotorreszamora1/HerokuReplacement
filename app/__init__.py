@@ -16,4 +16,6 @@ def conection_counter():
   for r in result:
     counter = r[0] +1;
   db_engine.execute("UPDATE numbers SET number= " + str(counter));
+  db_conn.close()
+  db_engine.dispose()
   return render_template('/conection_counter.html',counter=counter)
